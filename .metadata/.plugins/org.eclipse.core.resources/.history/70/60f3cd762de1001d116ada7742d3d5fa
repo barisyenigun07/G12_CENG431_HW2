@@ -1,0 +1,16 @@
+package app;
+
+import java.util.*;
+
+public class SmartHomeSimulationApp {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		boolean bool = scanner.nextBoolean();
+		if (bool) {
+			System.out.println("Hurray!");
+		}
+		else {
+			System.out.println("Oh no!");
+		}
+	}
+}
