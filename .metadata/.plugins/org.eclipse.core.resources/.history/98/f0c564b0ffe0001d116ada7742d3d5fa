@@ -1,8 +1,0 @@
-package model;
-
-public abstract class Actuator {
-	private String name;
-	private String helo;
-	
-	public abstract void doSomething();
-}
