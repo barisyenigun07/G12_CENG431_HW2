@@ -1,0 +1,51 @@
+@startuml
+!define AWSPUML https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v14.0/Legacy/
+
+class SmartHomeMediator {
+    +send(message: String, component: Component): void
+    +add(component: Component): void
+}
+
+abstract class Component {
+    +send(message: String): void
+    +receive(message: String): void
+}
+
+class TemperatureSensor {
+    +sendTemperature(): void
+}
+
+class LightSensor {
+    +sendBrightness(): void
+}
+
+class MotionSensor {
+    +sendMotion(): void
+}
+
+class Thermostat {
+    +setTemperature(temperature: int): void
+}
+
+class LightBulb {
+    +turnOn(): void
+    +turnOff(): void
+}
+
+class DoorLock {
+    +lock(): void
+    +unlock(): void
+}
+
+class ControlPanel {
+}
+
+SmartHomeMediator "1" <-- "1" Component: mediator
+TemperatureSensor --|> Component
+LightSensor --|> Component
+MotionSensor --|> Component
+Thermostat --|> Component
+LightBulb --|> Component
+DoorLock --|> Component
+ControlPanel --|> Component
+@enduml
